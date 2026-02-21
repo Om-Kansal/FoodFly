@@ -30,9 +30,9 @@ app.get("/",(req,res)=>{
     res.send("API Working")
 })
 
-app.listen(port,()=>{
-    console.log(`server Started on http://localhost:${port}`)
+app.listen(process.env.PORT || "",()=>{
+    console.log(`server Started on http://localhost:${process.env.PORT || port}`)
 })
 
 
-//mongodb+srv://omkansal285:9761@cluster0.tvu4jki.mongodb.net/?appName=Cluster0
+
