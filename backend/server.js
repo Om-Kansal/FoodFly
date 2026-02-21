@@ -30,9 +30,12 @@ app.get("/",(req,res)=>{
     res.send("API Working")
 })
 
-app.listen(process.env.PORT || "",()=>{
-    console.log(`server Started on http://localhost:${process.env.PORT || port}`)
-})
+export default app
+
+
+// app.listen(process.env.PORT || "",()=>{
+//     console.log(`server Started on http://localhost:${process.env.PORT || port}`)
+// })
 
 
 
