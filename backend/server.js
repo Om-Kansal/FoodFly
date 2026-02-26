@@ -12,6 +12,11 @@ import orderRouter from "./routes/orderRoute.js"
 const app = express()
 const port = 4000
 
+app.use(cors({
+  origin: "https://food-fly-fln2.vercel.app/",
+  credentials: true
+}))
+
 // middleware
 app.use(express.json())
 app.use(cors())
