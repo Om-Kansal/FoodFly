@@ -37,8 +37,8 @@ app.get("/",(req,res)=>{
 export default app
 
 
-// app.listen(process.env.PORT || "",()=>{
-//     console.log(`server Started on http://localhost:${process.env.PORT || port}`)
+// app.listen(port,()=>{
+//     console.log(`server Started on http://localhost:${port}`)
 // })
 
 
