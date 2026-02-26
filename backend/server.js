@@ -10,16 +10,14 @@ import orderRouter from "./routes/orderRoute.js"
 
 // app config
 const app = express()
-const port = 4000
+const port = process.env.PORT || 4000
+
+app.use(express.json())
 
 app.use(cors({
-  origin: "https://food-fly-fln2.vercel.app/",
+  origin: process.env.CLIENT_URL || "https://food-fly-fln2.vercel.app",
   credentials: true
 }))
-
-// middleware
-app.use(express.json())
-app.use(cors())
 
 // db connection
 connectDB();
@@ -37,6 +35,10 @@ app.get("/",(req,res)=>{
 
 // app.listen(process.env.PORT || port,()=>{
 //     console.log(`server Started on http://localhost:${process.env.PORT || port}`)
+// })
+
+// app.listen(process.env.PORT || port, () => {
+//   console.log(`Server started on http://localhost:${process.env.PORT || port}`)
 // })
 
 export default app
