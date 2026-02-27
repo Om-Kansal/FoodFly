@@ -15,9 +15,12 @@ const port = process.env.PORT || 4000
 app.use(express.json())
 
 app.use(cors({
-  origin: process.env.CLIENT_URL || "https://food-fly-fln2.vercel.app",
+  origin: [
+    "https://food-fly-fln2.vercel.app",  // frontend deployed URL
+    "http://localhost:5173"              // local dev (Vite)
+  ],
   credentials: true
-}))
+}));
 
 // db connection
 connectDB();
