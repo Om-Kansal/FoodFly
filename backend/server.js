@@ -13,14 +13,15 @@ const app = express()
 const port = process.env.PORT || 4000
 
 app.use(express.json())
+app.use(cors())
 
-app.use(cors({
-  origin: [
-    "https://food-fly-fln2.vercel.app",  // frontend deployed URL
-    "http://localhost:5173"              // local dev (Vite)
-  ],
-  credentials: true
-}));
+// app.use(cors({
+//   origin: [
+//     "https://food-fly-fln2.vercel.app",  // frontend deployed URL
+//     "http://localhost:5173"              // local dev (Vite)
+//   ],
+//   credentials: true
+// }));
 
 // db connection
 connectDB();
@@ -40,16 +41,12 @@ app.get("/",(req,res)=>{
 //     console.log(`server Started on http://localhost:${process.env.PORT || port}`)
 // })
 
-// app.listen(process.env.PORT || port, () => {
-//   console.log(`Server started on http://localhost:${process.env.PORT || port}`)
-// })
-
-export default app
+// export default app
 
 
-// app.listen(port,()=>{
-//     console.log(`server Started on http://localhost:${port}`)
-// })
+app.listen(port,()=>{
+    console.log(`server Started on http://localhost:${port}`)
+})
 
 
 
