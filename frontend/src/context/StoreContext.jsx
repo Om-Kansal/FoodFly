@@ -8,7 +8,8 @@ const StoreContextProvider = (props) => {
 
     const [cartItems, setcartItems] = useState({});
     //const url = "https://food-fly-red.vercel.app/";
-    const url = "http://localhost:4000";
+    //const url = "http://localhost:4000";
+    const url = "https://foodfly-backend-w84k.onrender.com";
     const [token, setToken] = useState("");
     const [food_list, setFoodList] = useState([]);
 
